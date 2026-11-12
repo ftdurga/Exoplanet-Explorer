@@ -5,11 +5,6 @@ host stars. It is built on the NASA Exoplanet Archive and covers 6,451
 planets orbiting 4,847 stars (Planetary Systems Composite Parameters,
 downloaded 2026-10-31).
 
-[YOUR MOTIVATION: one or two sentences on why you built it and what you
-wanted to practise.]
-
-![Home page](docs/screenshots/home.png)
-
 ## Features
 
 - Search and filter planets by name, radius range and host star, with pagination
@@ -19,9 +14,6 @@ wanted to practise.]
   radius against orbit length, and discoveries per year
 - Filters and comparisons live in the URL, so any view can be shared
 
-| Planet browser | Insights |
-| --- | --- |
-| ![Planets](docs/screenshots/planets.png) | ![Insights](docs/screenshots/insights.png) |
 
 ## Tech stack
 
@@ -183,8 +175,6 @@ these with `~`.
 - **Detection bias.** Short orbits and large planets dominate the sample,
   partly because the main detection methods find them most easily, so the
   catalogue is not a fair picture of all planets.
-
-[ADD one or two findings of your own.]
 
 ## Design choices
 
