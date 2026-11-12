@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+/* Deep-space backdrop with two faint nebula glows. The star canvas draws on top of it. */
+body {
+  margin: 0;
+  background-color: #01030b;
+  background-image:
+    radial-gradient(ellipse 60% 45% at 85% 8%, rgba(99, 102, 241, 0.20), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 8% 92%, rgba(236, 72, 153, 0.11), transparent 70%),
+    radial-gradient(ellipse at top, #0f1b3d 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+@keyframes spin-forward { to { transform: rotate(360deg); } }
+@keyframes spin-backward { to { transform: rotate(-360deg); } }
+@keyframes sun-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes globe-spin { to { background-position-x: calc(var(--tile) * -1); } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* An orbit ring turns; its planet counter-turns, so the planet's light stays on the same side. */
+.orbit, .orbit-counter {
+  animation-name: spin-forward;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.orbit-counter { animation-name: spin-backward; }
+.orbit-system:hover .orbit,
+.orbit-system:hover .orbit-counter { animation-play-state: paused; }
+
+.sun { animation: sun-pulse 5s ease-in-out infinite; }
+.globe-surface { animation: globe-spin 60s linear infinite; background-repeat: repeat-x; }
+.rise-in { animation: rise-in 0.8s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit, .orbit-counter, .sun, .globe-surface, .rise-in { animation: none !important; }
+}
