@@ -5,6 +5,8 @@ host stars. It is built on the NASA Exoplanet Archive and covers 6,451
 planets orbiting 4,847 stars (Planetary Systems Composite Parameters,
 downloaded 2026-10-31).
 
+<img width="632" height="308" alt="image" src="https://github.com/user-attachments/assets/24526f83-9557-4ee4-a28f-a6120d64523c" />
+
 ## Features
 
 - Search and filter planets by name, radius range and host star, with pagination
